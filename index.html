@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ética Digital - Minijuegos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="examen.css">
+</head>
+<body>
+<header>
+  <h1>Ética en el Uso de la Tecnología</h1>
+  <label>
+    <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+    Modo Oscuro
+  </label>
+</header>
+<nav>
+  <a href="#" onclick="showSection('inicio')">Inicio</a>
+  <a href="#" onclick="showSection('tips')">Tips Éticos</a>
+  <a href="#" onclick="showSection('minijuegos')">Minijuegos</a>
+  <a href="#" onclick="showSection('nosotros')">Sobre Nosotros</a>
+  <a href="#" onclick="showSection('encuesta')">Encuesta de Satisfacción</a>
+</nav>
+<main>
+  <section id="inicio">
+     <h2>¿Qué es la ética digital?</h2>
+  
+  <p>
+    La <strong>ética digital</strong> es el conjunto de principios, normas y valores que orientan nuestro comportamiento cuando utilizamos tecnologías digitales. Va más allá del simple cumplimiento de reglas: implica actuar con responsabilidad, respeto y conciencia en los espacios virtuales.
+  </p>
+  
+  <p>
+    En la era actual, donde la tecnología está presente en casi todos los aspectos de la vida cotidiana, la ética digital se vuelve fundamental para garantizar una convivencia sana, segura y justa en entornos digitales.
+  </p>
+
+  <h3>Principios clave de la ética digital:</h3>
+  <ul>
+    <P>✔️ Respeto a la privacidad y a los datos personales de otras personas.</P>
+    <P>✔️ Veracidad en la información que se comparte en redes sociales y otros medios.</P>
+    <P>✔️ Uso adecuado del contenido digital, evitando el plagio y la piratería.</P>
+    <P>✔️ Promoción de la ciberseguridad y prevención del acoso o violencia digital.</P>
+    <P>✔️ Actuar con responsabilidad al comentar, publicar o interactuar en línea.</P>
+  </ul>
+
+  <div class="galeria-etica">
+    <figure>
+      <img src="imagene.jpeg" alt="Ética digital y tecnología">
+      <figcaption>Conciencia ética en el uso de la tecnología.</figcaption>
+    </figure>
+    <figure>
+      <img src="imagenst.jpeg" alt="Ciberseguridad e Internet">
+      <figcaption>Importancia de la ciberseguridad en entornos digitales.</figcaption>
+    </figure>
+  </div>
+  </section>
+
+  <section id="tips" class="hidden">
+    <h2>Tips Éticos</h2>
+    <button onclick="showTip()">Mostrar tip aleatorio</button>
+    <div class="tip-box" id="tip-content">Haz clic para recibir un tip</div>
+  </section>
+
+  <section id="minijuegos" class="hidden">
+    <h2>Minijuegos Éticos</h2>
+    <h3>La Historia de Juan</h3>
+    <p id="story"></p>
+    <div id="game-container"></div>
+    <button id="next-button" class="hidden" onclick="nextDecision()">Siguiente</button>
+    <div id="final-results" class="hidden"></div>
+    <button id="restart-button" class="hidden" onclick="restartStory()">Tomar decisiones de nuevo</button>
+  </section>
+
+  <section id="nosotros" class="hidden">
+    <h2>Sobre Nosotros</h2>
+     <p>
+    Nosotros somos estudiantes de la Universidad Continental, pertenecientes a la carrera de Ingeniería de Sistemas, y con orgullo presentamos este trabajo como parte de nuestro proyecto de examen final del primer semestre académico.
+  </p>
+
+  <p>
+    En un mundo cada vez más interconectado y dependiente de la tecnología, consideramos que la ética digital no es solo un conjunto de normas, sino una actitud responsable frente al uso de las herramientas tecnológicas. Como futuros profesionales de la ingeniería de sistemas, comprendemos la importancia de actuar con integridad, respeto y conciencia en los entornos digitales.
+  </p>
+
+  <p>
+    Este proyecto no solo busca demostrar nuestros conocimientos adquiridos durante el semestre, sino también reflejar nuestro compromiso con los valores éticos fundamentales, tales como la privacidad, la seguridad de la información, el respeto por la propiedad intelectual, la responsabilidad en el uso de las redes y el fomento de un entorno digital sano y colaborativo.
+  </p>
+
+  <p>
+    Hemos trabajado de manera conjunta, aplicando tanto nuestras habilidades técnicas como nuestro sentido crítico, con el objetivo de crear una propuesta que promueva el uso consciente y ético de la tecnología.
+  </p>
+
+  <h3>Integrantes del equipo:</h3>
+  <ul>
+    <li>Yamil Alejandro Barra Camacho</li>
+    <li>José Jair Curasco Aranzabal</li>
+    <li>Carlos Benjamín Gavancho Chafloque</li>
+    <li>Edy Albert Lezama Quispe</li>
+    <li>Nitwar Sebastián Checya Aguilar</li>
+  </ul>
+
+  <p>
+    Cada uno de nosotros ha aportado activamente al desarrollo de este proyecto, convencidos de que la ética digital es un pilar esencial en la formación de todo ingeniero de sistemas.
+  </p>
+  </section>
+
+  <section id="encuesta" class="hidden">
+    <h2>Encuesta de Satisfacción</h2>
+    <form id="survey-form">
+      <label for="satisfaction">¿Qué tan satisfecho estás?</label><br>
+      <select id="satisfaction" name="satisfaction">
+        <option value="1">1 - Muy insatisfecho</option>
+        <option value="2">2 - Insatisfecho</option>
+        <option value="3">3 - Neutral</option>
+        <option value="4">4 - Satisfecho</option>
+        <option value="5">5 - Muy satisfecho</option>
+      </select><br><br>
+      <label for="comments">Comentarios adicionales:</label><br>
+      <textarea id="comments" name="comments"></textarea><br><br>
+      <button type="button" onclick="submitSurvey()">Enviar Encuesta</button>
+    </form>
+    <div id="survey-feedback" class="tip-box hidden"></div>
+  </section>
+</main>
+
+<div class="notification" id="notification"></div>
+
+<footer>
+  <p><strong>INFORMACIÓN:</strong> Proyecto educativo sobre ética digital.</p>
+</footer>
+
+<script src="examen.js"></script>
+</body>
+</html>
